@@ -31,5 +31,9 @@ module Kaseya::BMS
     def locations
       @locations ||= Client::Locations.new(@connection)
     end
+
+    def tickets
+      @tickets ||= Client::Tickets.new(@connection)
+    end
   end
 end
