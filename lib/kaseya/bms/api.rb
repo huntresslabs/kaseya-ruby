@@ -6,19 +6,19 @@ module Kaseya::BMS
       @connection = connection
     end
 
-    def get_many(path, params)
+    def get_many(path, params = {})
       Collection.new connection.get(path, params)
     end
 
-    def get_one(path, params)
+    def get_one(path, params = {})
       Response.new connection.get(path, params)
     end
 
-    def post(path, params)
+    def post(path, params = {})
       Result.new connection.post(path, params)
     end
 
-    def put(path, params)
+    def put(path, params = {})
       Result.new connection.put(path, params)
     end
 
