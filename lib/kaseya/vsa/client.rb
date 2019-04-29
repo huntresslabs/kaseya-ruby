@@ -7,5 +7,9 @@ module Kaseya::VSA
     def initialize(connection)
       @connection = connection
     end
+
+    def agents
+      @agents ||= Client::Agents.new(@connection)
+    end
   end
 end

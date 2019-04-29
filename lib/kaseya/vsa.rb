@@ -1,5 +1,6 @@
 module Kaseya
   module VSA
+    require_relative "vsa/api"
     require_relative "vsa/client"
     require_relative "vsa/configuration"
     require_relative "vsa/connection"
