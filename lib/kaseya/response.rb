@@ -1,4 +1,4 @@
-module Kaseya::BMS
+module Kaseya
   class Response
     attr_reader :code, :status, :error, :result
 

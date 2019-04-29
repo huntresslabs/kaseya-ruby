@@ -7,19 +7,19 @@ module Kaseya::BMS
     end
 
     def get_many(path, params = {})
-      Collection.new connection.get(path, params)
+      Kaseya::Collection.new connection.get(path, params)
     end
 
     def get_one(path, params = {})
-      Response.new connection.get(path, params)
+      Kaseya::Response.new connection.get(path, params)
     end
 
     def post(path, params = {})
-      Result.new connection.post(path, params)
+      Kaseya::Result.new connection.post(path, params)
     end
 
     def put(path, params = {})
-      Result.new connection.put(path, params)
+      Kaseya::Result.new connection.put(path, params)
     end
 
     def delete(path)

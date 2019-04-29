@@ -2,12 +2,9 @@ module Kaseya
   module BMS
     require_relative "bms/api"
     require_relative "bms/client"
-    require_relative "bms/collection"
     require_relative "bms/configuration"
     require_relative "bms/connection"
     require_relative "bms/exceptions"
-    require_relative "bms/response"
-    require_relative "bms/result"
     require_relative "bms/version"
 
     extend Configuration

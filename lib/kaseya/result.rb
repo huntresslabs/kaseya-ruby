@@ -1,4 +1,4 @@
-module Kaseya::BMS
+module Kaseya
   class Result
     attr_reader :raw
 
