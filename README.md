@@ -8,7 +8,7 @@ The Kaseya Ruby library provides convenient access to the Kaseya [BMS](https://w
 
 API documentation:
 - BMS: https://bms.kaseya.com/api
-- VSA: http://help.kaseya.com/webhelp/EN/restapi/9040000/index.asp#home.htm
+- VSA: http://help.kaseya.com/webhelp/EN/restapi/9040000/index.asp
 
 ## Installation
 
@@ -87,7 +87,7 @@ bms.locations.new(
 
 ### Filtering, Sorting, Paging
 
-Both the BMS and VSA API's use Odata expressions to specify filtering, sorting, and paging parameters. Where supported these parameters can be passed as options using `skip`, `top`, `orderby`, and `filter` and the library will prepend the `$` before adding them to the query.
+Both the BMS and VSA API's use Odata expressions to specify filtering, sorting, and paging parameters. Where supported, these parameters can be passed as options using `skip`, `top`, `orderby`, and `filter` and the library will prepend the `$` before adding them to the query.
 
 To query the second page of accounts where each page has 50 results:
 
