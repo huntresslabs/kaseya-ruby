@@ -6,6 +6,7 @@ require "active_support/core_ext/hash"
 module Kaseya
   require "kaseya/collection"
   require "kaseya/connection"
+  require "kaseya/exceptions"
   require "kaseya/response"
   require "kaseya/result"
 

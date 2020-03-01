@@ -5,7 +5,7 @@ module Kaseya
     delegate_missing_to :@raw
 
     def initialize(result)
-      @raw = result
+      @raw = result || {}
     end
 
     def [](key)

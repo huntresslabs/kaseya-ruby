@@ -1,8 +1,11 @@
 require "faraday"
-require "faraday_middleware"
+
+require_relative "http_errors"
 
 module Kaseya::BMS
   class Connection < Kaseya::Connection
+    ERROR_MIDDLEWARE = [Kaseya::BMS::HttpErrors]
+
     def initialize(host, token, expires)
       super(host, token)
       @expires = expires

@@ -13,5 +13,17 @@ module Kaseya::VSA
     def get_one(path, params = {})
       Kaseya::Response.new connection.get(path, params)
     end
+
+    def post(path, params = {})
+      Kaseya::Result.new connection.post(path, params)
+    end
+
+    def put(path, params = {})
+      Kaseya::Result.new connection.put(path, params)
+    end
+
+    def delete(path)
+      connection.delete(path)
+    end
   end
 end

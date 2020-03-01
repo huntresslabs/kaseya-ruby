@@ -11,5 +11,13 @@ module Kaseya::VSA
     def agents
       @agents ||= Client::Agents.new(@connection)
     end
+
+    def machine_groups
+      @machine_groups ||= Client::MachineGroups.new(@connection)
+    end
+
+    def organizations
+      @organizations ||= Client::Organizations.new(@connection)
+    end
   end
 end

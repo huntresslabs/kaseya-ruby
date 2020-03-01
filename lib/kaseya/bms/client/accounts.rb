@@ -8,7 +8,7 @@ module Kaseya::BMS
       get_one "crm/accounts/#{id}"
     end
 
-    def new(params = {})
+    def create(params = {})
       post "crm/accounts", params
     end
 

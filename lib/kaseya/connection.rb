@@ -4,16 +4,20 @@ require "faraday_middleware"
 module Kaseya
   class Connection
     ODATA_PARAMS = [:skip, :top, :orderby, :filter]
+    ERROR_MIDDLEWARE = []
 
     def initialize(host, token)
       @host = host
       @token = token
 
       @connection = Faraday::Connection.new(connection_options) do |conn|
+        ERROR_MIDDLEWARE.each do |klass|
+          conn.use klass
+        end
+
         conn.authorization :Bearer, @token
         conn.request :json
         conn.response :json
-        conn.response :raise_error
         conn.adapter Faraday.default_adapter
       end
     end

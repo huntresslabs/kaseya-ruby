@@ -1,8 +1,11 @@
 require "faraday"
-require "faraday_middleware"
+
+require_relative "http_errors"
 
 module Kaseya::VSA
   class Connection < Kaseya::Connection
+    ERROR_MIDDLEWARE = [Kaseya::VSA::HttpErrors]
+
     def connection_options
       {
         headers: {

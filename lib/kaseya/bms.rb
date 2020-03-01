@@ -5,6 +5,7 @@ module Kaseya
     require_relative "bms/configuration"
     require_relative "bms/connection"
     require_relative "bms/exceptions"
+    require_relative "bms/http_errors"
     require_relative "bms/version"
 
     extend Configuration
@@ -35,15 +36,18 @@ module Kaseya
       }
 
       conn = Faraday.new(url: "https://#{host}/api", ssl: { verify: !debug }) do |faraday|
+        faraday.use HttpErrors
+
         faraday.request :url_encoded
         faraday.response :json
-        faraday.response :raise_error
         faraday.adapter Faraday.default_adapter
       end
 
       response = conn.post('token', params)
       connection = Connection.new(host, response.body["access_token"], response.body["expires_in"])
       Client.new(connection)
+    rescue Faraday::ConnectionFailed => e
+      raise Kaseya::ConnectionFailed, e.message
     end
   end
 end
