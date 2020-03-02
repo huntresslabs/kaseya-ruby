@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "faraday", "~> 0.15.0"
   spec.add_dependency "faraday_middleware", "~> 0.13.1"
-  spec.add_dependency "activesupport", "~> 5.2.3"
+  spec.add_dependency "activesupport", ">= 5.0"
 end
