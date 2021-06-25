@@ -3,5 +3,9 @@ module Kaseya::BMS
     def new(params = {})
       post "servicedesk/tickets", params
     end
+
+    def find(id)
+      get_one "servicedesk/tickets/#{id}"
+    end
   end
 end
