@@ -27,5 +27,9 @@ module Kaseya::VSA
     def alarms
       @alarms ||= Client::Alarms.new(@connection)
     end
+
+    def logs
+      @logs ||= Client::Logs.new(@connection)
+    end
   end
 end
