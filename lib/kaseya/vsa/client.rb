@@ -19,5 +19,17 @@ module Kaseya::VSA
     def organizations
       @organizations ||= Client::Organizations.new(@connection)
     end
+
+    def assets
+      @assets ||= Client::Assets.new(@connection)
+    end
+
+    def alarms
+      @alarms ||= Client::Alarms.new(@connection)
+    end
+
+    def logs
+      @logs ||= Client::Logs.new(@connection)
+    end
   end
 end
