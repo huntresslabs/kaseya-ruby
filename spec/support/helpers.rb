@@ -42,7 +42,11 @@ def ticket_stub_request
     }
   }.to_json
 
+  headers = {
+    "Content-Type" => "application/json"
+  }
+
   stub_request(:get, "https://#{ENV["BMS_HOST"]}/api/servicedesk/tickets/17")
     .with(headers: { "Accept" => "*/*", "Authorization" => "Bearer access_token" })
-    .to_return(status: 200, body: body)
+    .to_return(status: 200, body: body, headers: headers)
 end

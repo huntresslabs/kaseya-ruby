@@ -1,5 +1,4 @@
 require "faraday"
-require "faraday_middleware"
 
 module Kaseya
   class Connection
@@ -15,7 +14,7 @@ module Kaseya
           conn.use klass
         end
 
-        conn.authorization :Bearer, @token
+        conn.request :authorization, :Bearer, @token
         conn.request :json
         conn.response :json
         conn.adapter Faraday.default_adapter
