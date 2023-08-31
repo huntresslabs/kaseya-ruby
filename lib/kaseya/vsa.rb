@@ -26,7 +26,7 @@ module Kaseya
         faraday.use JsonErrors
         faraday.use HttpErrors
 
-        faraday.authorization :Basic, auth
+        faraday.request :authorization, :Basic, auth
         faraday.request :url_encoded
         faraday.response :json
         faraday.adapter Faraday.default_adapter
